@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
-import { Check, ArrowDown } from "lucide-react";
+import { Check, ArrowDown, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero-interior.jpg";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
 
 const badges = [
   "Réponse rapide",
-  "Résultat en 24h",
+  "Sans engagement",
   "Service local à Bordeaux",
 ];
+
+const WHATSAPP_URL =
+  "https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -19,7 +22,6 @@ const HeroSection = () => (
 
     <div className="container relative z-10 pt-32 pb-24 md:pt-44 md:pb-36">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Text */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,20 +31,23 @@ const HeroSection = () => (
             Home staging visuel premium
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.05] text-primary-foreground mb-8">
-            Transformez vos photos immobilières en visuels qui donnent envie de louer ou d'acheter
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.05] text-primary-foreground mb-6">
+            Transformez vos photos immobilières en visuels qui donnent envie
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/70 max-w-lg mb-10 font-light leading-relaxed">
-            Home staging virtuel haut de gamme, service local à Bordeaux. Résultat en 24h.
+            Home staging virtuel haut de gamme. Résultat en 24h, sans engagement.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
-              href="#cta"
-              className="inline-block gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium text-center"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium text-center"
             >
-              Recevoir un exemple gratuit
+              <MessageCircle size={18} />
+              Recevoir mon exemple gratuit en 24h
             </a>
             <a
               href="#services"
@@ -52,6 +57,10 @@ const HeroSection = () => (
               <ArrowDown size={16} />
             </a>
           </div>
+
+          <p className="text-sm text-primary-foreground/50 mb-10 font-light">
+            Aucun engagement – résultat rapide
+          </p>
 
           <div className="flex flex-wrap gap-6">
             {badges.map((b) => (
@@ -65,7 +74,6 @@ const HeroSection = () => (
           </div>
         </motion.div>
 
-        {/* Before/After visual */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}

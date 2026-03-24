@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle, Check } from "lucide-react";
+
+const WHATSAPP_URL =
+  "https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro";
 
 const FinalCTA = () => {
   const ref = useRef(null);
@@ -23,16 +26,25 @@ const FinalCTA = () => {
             <span className="italic">une photo</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg mb-10 max-w-lg mx-auto font-light">
-            Découvrez le potentiel de votre bien dès maintenant
+            Envoyez-nous une photo et recevez le résultat en moins de 24h
           </p>
           <a
-            href="https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20tester%20le%20service%20BoostImmoPro"
+            href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-10 py-5 rounded-xl text-base font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-all hover:scale-[1.02]"
           >
-            Envoyer ma photo <ArrowRight size={18} />
+            <MessageCircle size={20} />
+            Recevoir mon exemple gratuit en moins de 24h
           </a>
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            {["Sans engagement", "Réponse rapide", "Service local"].map((t) => (
+              <div key={t} className="flex items-center gap-2 text-primary-foreground/70 text-sm">
+                <Check size={14} />
+                <span className="font-light">{t}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
