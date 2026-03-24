@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MousePointerClick, Eye, Zap } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const results = [
   {
@@ -69,14 +70,13 @@ const ResultsSection = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a
+          <WhatsAppLink
             href="https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20pour%20mon%20bien"
-            target="_blank"
-            rel="noopener noreferrer"
+            section="resultats"
             className="inline-flex items-center gap-3 gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium"
           >
             Envoyer une photo sur WhatsApp
-          </a>
+          </WhatsAppLink>
         </motion.div>
       </div>
     </section>

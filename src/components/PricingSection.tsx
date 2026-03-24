@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, Crown, MessageCircle } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const WHATSAPP_URL =
   "https://wa.me/33656869417?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%2C%20pouvez-vous%20me%20contacter%20%3F";
@@ -55,15 +56,14 @@ const PricingSection = () => {
                 </div>
               ))}
             </div>
-            <a
+            <WhatsAppLink
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              section="tarifs_decouverte"
               className="flex items-center justify-center gap-2 w-full py-4 rounded-xl border-2 border-foreground text-foreground text-sm font-semibold tracking-wide-premium uppercase hover:bg-foreground hover:text-background transition-all duration-300"
             >
               <MessageCircle size={16} />
               Commander sur WhatsApp
-            </a>
+            </WhatsAppLink>
           </motion.div>
 
           {/* Pack Complet */}
@@ -95,15 +95,14 @@ const PricingSection = () => {
                 </div>
               ))}
             </div>
-            <a
+            <WhatsAppLink
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              section="tarifs_complet"
               className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary-foreground text-primary text-sm font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity"
             >
               <MessageCircle size={16} />
               Commander sur WhatsApp
-            </a>
+            </WhatsAppLink>
           </motion.div>
         </div>
 

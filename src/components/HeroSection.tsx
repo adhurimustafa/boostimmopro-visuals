@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowDown, MessageCircle } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 import heroImg from "@/assets/hero-interior.jpg";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
@@ -40,15 +41,14 @@ const HeroSection = () => (
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <a
+            <WhatsAppLink
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              section="hero"
               className="inline-flex items-center justify-center gap-3 gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium text-center"
             >
               <MessageCircle size={18} />
               Tester gratuitement et obtenir plus de réservations
-            </a>
+            </WhatsAppLink>
             <a
               href="#services"
               className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 text-primary-foreground/90 px-8 py-4 rounded-xl text-base font-medium hover:bg-primary-foreground/10 transition-all text-center"
