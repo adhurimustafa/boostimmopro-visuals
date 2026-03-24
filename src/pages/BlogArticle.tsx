@@ -57,7 +57,7 @@ const BlogArticle = () => {
   if (!article) {
     return (
       <>
-        <Navbar />
+        <Navbar forceScrolled />
         <div className="min-h-screen flex items-center justify-center pt-20">
           <div className="text-center">
             <h1 className="text-2xl font-display font-bold text-foreground mb-4">Article non trouvé</h1>
@@ -71,7 +71,7 @@ const BlogArticle = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar forceScrolled />
       <article className="pt-32 pb-24">
         <div className="container max-w-3xl">
           <Link to="/#blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10 tracking-wide-premium uppercase">
