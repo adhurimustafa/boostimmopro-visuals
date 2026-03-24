@@ -22,11 +22,11 @@ const FinalCTA = () => {
             Offre découverte
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-primary-foreground mb-6 leading-tight">
-            Testez gratuitement sur{" "}
-            <span className="italic">une photo</span>
+            Voyez la différence sur{" "}
+            <span className="italic">votre annonce</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg mb-10 max-w-lg mx-auto font-light">
-            Envoyez-nous une photo et recevez le résultat en moins de 24h
+            Recevez votre exemple gratuit en moins de 24h et constatez l'impact sur vos résultats
           </p>
           <a
             href={WHATSAPP_URL}
