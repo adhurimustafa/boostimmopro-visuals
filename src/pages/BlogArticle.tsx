@@ -98,7 +98,7 @@ const BlogArticle = () => {
               Testez gratuitement sur une photo
             </p>
             <a
-              href="https://wa.me/33600000000"
+              href="https://wa.me/33656869417"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity"
