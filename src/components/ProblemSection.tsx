@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { Timer, ImageOff, EyeOff, TrendingDown } from "lucide-react";
 
 const problems = [
-  { icon: Timer, title: "Les visiteurs décident en quelques secondes", desc: "La première impression est visuelle. Pas de deuxième chance." },
-  { icon: ImageOff, title: "Une mauvaise photo = annonce ignorée", desc: "Votre bien passe inaperçu face à la concurrence." },
-  { icon: EyeOff, title: "Pas de projection, pas de visite", desc: "Sans décor, les acheteurs ne se voient pas vivre chez vous." },
-  { icon: TrendingDown, title: "Le visuel est la clé de la réservation", desc: "90% des locataires et acheteurs commencent leur recherche en ligne." },
+  { icon: Timer, title: "Une annonce se juge en quelques secondes", desc: "Vous n'avez qu'une chance de capter l'attention. La perdre, c'est perdre un client." },
+  { icon: ImageOff, title: "Des photos moyennes = perte de clients", desc: "Chaque photo médiocre fait fuir des acheteurs et des locataires potentiels." },
+  { icon: EyeOff, title: "Vos concurrents attirent déjà vos prospects", desc: "Les annonces avec des visuels premium captent les demandes avant les vôtres." },
+  { icon: TrendingDown, title: "Moins de clics, moins de réservations", desc: "Sans visuels impactants, vos performances sur les plateformes chutent." },
 ];
 
 const ProblemSection = () => {

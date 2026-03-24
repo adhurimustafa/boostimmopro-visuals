@@ -38,7 +38,7 @@ const FinalCTA = () => {
             Recevoir mon exemple gratuit et voir la différence
           </a>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
-            {["Sans engagement", "Réponse rapide", "Service local"].map((t) => (
+            {["Sans engagement", "Résultat concret", "Service local"].map((t) => (
               <div key={t} className="flex items-center gap-2 text-primary-foreground/70 text-sm">
                 <Check size={14} />
                 <span className="font-light">{t}</span>

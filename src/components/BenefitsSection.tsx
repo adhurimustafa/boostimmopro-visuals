@@ -3,11 +3,11 @@ import { useRef } from "react";
 import { TrendingUp, BarChart3, Clock, Award, MapPin } from "lucide-react";
 
 const benefits = [
-  { icon: TrendingUp, title: "Plus d'attractivité", desc: "Des visuels qui captent immédiatement l'attention des acquéreurs" },
-  { icon: BarChart3, title: "Plus de clics", desc: "Des annonces qui génèrent plus de visites et de conversions" },
-  { icon: Clock, title: "Gain de temps", desc: "Résultats livrés en moins de 24 heures" },
-  { icon: Award, title: "Présentation haut de gamme", desc: "Qualité studio à un prix accessible" },
-  { icon: MapPin, title: "Service local et humain", desc: "Un interlocuteur dédié à Bordeaux, disponible et réactif" },
+  { icon: TrendingUp, title: "Attirez immédiatement l'attention", desc: "Des visuels qui stoppent le scroll et déclenchent l'envie de visiter" },
+  { icon: BarChart3, title: "Donnez envie de réserver ou d'acheter", desc: "Vos annonces génèrent plus de demandes, de clics et de conversions" },
+  { icon: Clock, title: "Résultat visible en 24h", desc: "Boostez vos performances dès demain, sans attendre" },
+  { icon: Award, title: "Augmentez vos performances", desc: "Un investissement rentabilisé dès la première réservation ou vente" },
+  { icon: MapPin, title: "Service local et réactif", desc: "Un interlocuteur dédié à Bordeaux qui comprend votre marché" },
 ];
 
 const BenefitsSection = () => {

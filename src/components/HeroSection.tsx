@@ -47,7 +47,7 @@ const HeroSection = () => (
               className="inline-flex items-center justify-center gap-3 gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium text-center"
             >
               <MessageCircle size={18} />
-              Recevoir mon exemple gratuit en 24h
+              Tester gratuitement et obtenir plus de réservations
             </a>
             <a
               href="#services"

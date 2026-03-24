@@ -5,18 +5,18 @@ import { MousePointerClick, Eye, Zap } from "lucide-react";
 const results = [
   {
     icon: MousePointerClick,
-    title: "Plus de clics sur vos annonces",
-    desc: "Des visuels premium qui captent l'attention dès la première seconde",
+    title: "Plus de clics et de demandes de visite",
+    desc: "Vos annonces captent l'attention et génèrent plus de contacts qualifiés",
   },
   {
     icon: Eye,
-    title: "Meilleure projection pour les visiteurs",
-    desc: "Vos futurs locataires ou acheteurs se projettent instantanément",
+    title: "Plus de réservations Airbnb",
+    desc: "Des voyageurs qui réservent instantanément grâce à des visuels qui font la différence",
   },
   {
     icon: Zap,
-    title: "Biens loués ou vendus plus rapidement",
-    desc: "Des résultats concrets : moins de temps sur le marché",
+    title: "Biens vendus ou loués plus rapidement",
+    desc: "Moins de temps sur le marché, plus de résultats concrets pour votre activité",
   },
 ];
 
