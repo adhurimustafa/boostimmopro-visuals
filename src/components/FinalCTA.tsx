@@ -29,15 +29,14 @@ const FinalCTA = () => {
           <p className="text-primary-foreground/70 text-lg mb-10 max-w-lg mx-auto font-light">
             Recevez votre exemple gratuit en moins de 24h et constatez l'impact sur vos résultats
           </p>
-          <a
+          <WhatsAppLink
             href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            section="cta_final"
             className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-10 py-5 rounded-xl text-base font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-all hover:scale-[1.02]"
           >
             <MessageCircle size={20} />
             Recevoir mon exemple gratuit et voir la différence
-          </a>
+          </WhatsAppLink>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             {["Sans engagement", "Résultat concret", "Service local"].map((t) => (
               <div key={t} className="flex items-center gap-2 text-primary-foreground/70 text-sm">

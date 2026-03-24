@@ -97,14 +97,13 @@ const BlogArticle = () => {
             <p className="text-primary-foreground/70 mb-8 font-light">
               Testez gratuitement sur une photo
             </p>
-            <a
+            <WhatsAppLink
               href="https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20pour%20mon%20bien"
-              target="_blank"
-              rel="noopener noreferrer"
+              section="blog"
               className="inline-block bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity"
             >
               Envoyer ma photo
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </article>

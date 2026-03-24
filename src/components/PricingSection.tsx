@@ -95,15 +95,14 @@ const PricingSection = () => {
                 </div>
               ))}
             </div>
-            <a
+            <WhatsAppLink
               href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              section="tarifs_complet"
               className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary-foreground text-primary text-sm font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity"
             >
               <MessageCircle size={16} />
               Commander sur WhatsApp
-            </a>
+            </WhatsAppLink>
           </motion.div>
         </div>
 

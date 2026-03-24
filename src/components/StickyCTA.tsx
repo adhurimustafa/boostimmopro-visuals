@@ -20,7 +20,7 @@ const StickyCTA = () => (
       >
         <MessageCircle size={20} />
         Recevoir mon exemple gratuit
-      </a>
+      </WhatsAppLink>
       <p className="text-center text-xs text-muted-foreground mt-2 bg-background/80 backdrop-blur-sm rounded-full py-1 px-4 mx-auto w-fit">
         Sans engagement · Réponse rapide · Service local à Bordeaux
       </p>
