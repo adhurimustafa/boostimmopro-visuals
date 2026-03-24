@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ forceScrolled = false }: { forceScrolled?: boolean }) => {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(forceScrolled);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);

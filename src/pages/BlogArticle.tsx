@@ -71,7 +71,7 @@ const BlogArticle = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar forceScrolled />
       <article className="pt-32 pb-24">
         <div className="container max-w-3xl">
           <Link to="/#blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10 tracking-wide-premium uppercase">
