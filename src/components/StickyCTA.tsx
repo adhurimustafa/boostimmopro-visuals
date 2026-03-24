@@ -13,10 +13,9 @@ const StickyCTA = () => (
     className="fixed bottom-0 left-0 right-0 z-50 p-4 md:px-8 pointer-events-none"
   >
     <div className="max-w-lg mx-auto pointer-events-auto">
-      <a
+      <WhatsAppLink
         href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+        section="sticky"
         className="flex items-center justify-center gap-3 w-full gradient-primary text-primary-foreground px-8 py-4 rounded-2xl text-base font-semibold shadow-elevated hover:opacity-95 hover:scale-[1.01] transition-all"
       >
         <MessageCircle size={20} />
