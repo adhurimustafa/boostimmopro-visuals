@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MousePointerClick, Eye, Zap } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const results = [
   {
