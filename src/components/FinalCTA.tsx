@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { MessageCircle, Check } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro";
+  "https://wa.me/33656869417?text=Bonjour%2C%20je%20veux%20tester%20votre%20service%20gratuitement";
 
 const FinalCTA = () => {
   const ref = useRef(null);

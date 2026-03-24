@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { Check, Crown, MessageCircle } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro";
+  "https://wa.me/33656869417?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%2C%20pouvez-vous%20me%20contacter%20%3F";
 
 const PricingSection = () => {
   const ref = useRef(null);

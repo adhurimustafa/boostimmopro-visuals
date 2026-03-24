@@ -30,7 +30,7 @@ const ContactSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-2xl mx-auto"
         >
           <a
-            href="https://wa.me/33656869417"
+            href="https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20%C3%AAtre%20contact%C3%A9%20pour%20mon%20projet"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 px-8 py-5 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-all duration-500 w-full sm:w-auto justify-center"

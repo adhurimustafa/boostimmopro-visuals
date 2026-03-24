@@ -70,7 +70,7 @@ const ResultsSection = () => {
           className="text-center mt-12"
         >
           <a
-            href="https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro"
+            href="https://wa.me/33656869417?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20pour%20mon%20bien"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 gradient-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-semibold hover:opacity-90 transition-all hover:scale-[1.02] shadow-premium"
