@@ -35,7 +35,7 @@ const FinalCTA = () => {
             className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-10 py-5 rounded-xl text-base font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-all hover:scale-[1.02]"
           >
             <MessageCircle size={20} />
-            Recevoir mon exemple gratuit en moins de 24h
+            Recevoir mon exemple gratuit et voir la différence
           </a>
           <div className="flex flex-wrap justify-center gap-6 mt-8">
             {["Sans engagement", "Réponse rapide", "Service local"].map((t) => (
