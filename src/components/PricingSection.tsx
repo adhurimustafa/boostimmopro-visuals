@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, Crown } from "lucide-react";
+import { Check, Crown, MessageCircle } from "lucide-react";
+
+const WHATSAPP_URL =
+  "https://wa.me/33600000000?text=Bonjour%2C%20je%20souhaite%20recevoir%20un%20exemple%20gratuit%20BoostImmoPro";
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -16,41 +19,54 @@ const PricingSection = () => {
           className="text-center max-w-2xl mx-auto mb-20"
         >
           <p className="text-[13px] font-medium tracking-wide-premium uppercase text-muted-foreground mb-4">
-            Tarifs
+            Tarifs simples
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-foreground leading-tight">
-            Nos <span className="italic">offres</span>
+            Choisissez votre <span className="italic">formule</span>
           </h2>
+          <p className="text-muted-foreground text-lg font-light leading-relaxed mt-4">
+            Deux offres claires, orientées résultat
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {/* À distance */}
+          {/* Pack Découverte */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="p-10 rounded-2xl border border-border bg-card shadow-card hover:shadow-elevated transition-all duration-500"
           >
-            <h3 className="text-2xl font-display font-bold text-foreground mb-2">À distance</h3>
-            <p className="text-sm text-muted-foreground mb-8 font-light">Envoyez vos photos, on s'occupe du reste</p>
+            <h3 className="text-2xl font-display font-bold text-foreground mb-2">Pack Découverte</h3>
+            <p className="text-sm text-muted-foreground mb-4 font-light">Idéal pour tester le service</p>
+            <div className="text-4xl font-display font-bold text-foreground mb-8">25€</div>
             <div className="space-y-4 mb-10">
               {[
-                { label: "1 photo", price: "10€" },
-                { label: "3 photos", price: "25€" },
-                { label: "5 photos", price: "45€" },
+                "3 photos sublimées",
+                "Livraison en 24h",
+                "Envoi par WhatsApp ou email",
+                "Retouches incluses",
               ].map((item) => (
-                <div key={item.label} className="flex items-center justify-between py-3 border-b border-border/60">
-                  <span className="text-sm text-foreground">{item.label}</span>
-                  <span className="text-lg font-display font-bold text-foreground">{item.price}</span>
+                <div key={item} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full border border-border flex items-center justify-center shrink-0">
+                    <Check size={12} className="text-foreground" />
+                  </div>
+                  <span className="text-sm text-foreground">{item}</span>
                 </div>
               ))}
             </div>
-            <a href="#cta" className="block text-center py-4 rounded-xl border-2 border-foreground text-foreground text-sm font-semibold tracking-wide-premium uppercase hover:bg-foreground hover:text-background transition-all duration-300">
-              Commander
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-4 rounded-xl border-2 border-foreground text-foreground text-sm font-semibold tracking-wide-premium uppercase hover:bg-foreground hover:text-background transition-all duration-300"
+            >
+              <MessageCircle size={16} />
+              Commander sur WhatsApp
             </a>
           </motion.div>
 
-          {/* Signature */}
+          {/* Pack Complet */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -60,28 +76,40 @@ const PricingSection = () => {
             <div className="absolute -top-4 right-8 flex items-center gap-2 bg-background text-foreground text-xs font-semibold tracking-wide-premium uppercase px-5 py-2 rounded-full shadow-card">
               <Crown size={14} /> Le plus demandé
             </div>
-            <h3 className="text-2xl font-display font-bold mb-2">Service Signature</h3>
-            <p className="text-sm text-primary-foreground/60 mb-8 font-light">Service complet à Bordeaux</p>
+            <h3 className="text-2xl font-display font-bold mb-2">Pack Complet</h3>
+            <p className="text-sm text-primary-foreground/60 mb-4 font-light">Maximum d'impact pour votre annonce</p>
+            <div className="text-4xl font-display font-bold mb-8">45€</div>
             <div className="space-y-4 mb-10">
               {[
-                "Déplacement sur place",
-                "Prise de vues optimisées",
-                "Valorisation visuelle premium",
+                "5 photos sublimées",
+                "Livraison en 24h",
+                "Retouches illimitées",
+                "Conseil personnalisé inclus",
+                "Optimisé pour Airbnb & portails",
               ].map((item) => (
-                <div key={item} className="flex items-center gap-4 py-3">
-                  <div className="w-6 h-6 rounded-full border border-primary-foreground/30 flex items-center justify-center shrink-0">
-                    <Check size={14} />
+                <div key={item} className="flex items-center gap-3">
+                  <div className="w-5 h-5 rounded-full border border-primary-foreground/30 flex items-center justify-center shrink-0">
+                    <Check size={12} />
                   </div>
                   <span className="text-sm font-light">{item}</span>
                 </div>
               ))}
             </div>
-            <div className="text-4xl font-display font-bold mb-8">80€ – 120€</div>
-            <a href="#cta" className="block text-center py-4 rounded-xl bg-primary-foreground text-primary text-sm font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity">
-              Réserver
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-primary-foreground text-primary text-sm font-semibold tracking-wide-premium uppercase hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle size={16} />
+              Commander sur WhatsApp
             </a>
           </motion.div>
         </div>
+
+        <p className="text-center text-sm text-muted-foreground mt-8 font-light">
+          Service local à Bordeaux · Réponse rapide · Sans engagement
+        </p>
       </div>
     </section>
   );

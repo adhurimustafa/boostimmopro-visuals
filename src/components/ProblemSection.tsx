@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ImageOff, EyeOff, TrendingDown, MousePointerClick } from "lucide-react";
+import { Timer, ImageOff, EyeOff, TrendingDown } from "lucide-react";
 
 const problems = [
-  { icon: ImageOff, title: "Photos froides ou vides", desc: "Des images qui ne mettent pas en valeur votre bien" },
-  { icon: EyeOff, title: "Manque de projection", desc: "Les visiteurs ne se voient pas vivre dans l'espace" },
-  { icon: TrendingDown, title: "Faible attractivité", desc: "Votre annonce passe inaperçue face à la concurrence" },
-  { icon: MousePointerClick, title: "Moins de clics, moins de visites", desc: "Un visuel moyen = des opportunités manquées" },
+  { icon: Timer, title: "Les visiteurs décident en quelques secondes", desc: "La première impression est visuelle. Pas de deuxième chance." },
+  { icon: ImageOff, title: "Une mauvaise photo = annonce ignorée", desc: "Votre bien passe inaperçu face à la concurrence." },
+  { icon: EyeOff, title: "Pas de projection, pas de visite", desc: "Sans décor, les acheteurs ne se voient pas vivre chez vous." },
+  { icon: TrendingDown, title: "Le visuel est la clé de la réservation", desc: "90% des locataires et acheteurs commencent leur recherche en ligne." },
 ];
 
 const ProblemSection = () => {
@@ -26,8 +26,8 @@ const ProblemSection = () => {
             Le constat
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-foreground leading-tight">
-            Pourquoi votre annonce ne{" "}
-            <span className="italic">performe pas</span> ?
+            Pourquoi vos photos actuelles ne{" "}
+            <span className="italic">suffisent pas</span>
           </h2>
         </motion.div>
 
