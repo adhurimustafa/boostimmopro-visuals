@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 const WHATSAPP_URL =
   "https://wa.me/33656869417?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20vos%20services";
