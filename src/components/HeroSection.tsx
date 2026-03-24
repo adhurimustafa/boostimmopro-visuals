@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, ArrowDown, MessageCircle } from "lucide-react";
+import WhatsAppLink from "@/components/WhatsAppLink";
 import heroImg from "@/assets/hero-interior.jpg";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
