@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -25,35 +25,44 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section id="testimonials" className="section-padding bg-background">
       <div className="container" ref={ref}>
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
-            Résultats <span className="gradient-text">concrets</span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-2xl mx-auto mb-20"
+        >
+          <p className="text-[13px] font-medium tracking-wide-premium uppercase text-muted-foreground mb-4">
+            Témoignages
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold text-foreground leading-tight">
+            Résultats <span className="italic">concrets</span>
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="p-6 rounded-2xl bg-card border border-border shadow-card"
+              transition={{ duration: 0.6, delay: i * 0.12 }}
+              className="p-8 rounded-2xl bg-card border border-border shadow-card hover:shadow-elevated transition-all duration-500 relative"
             >
-              <div className="flex gap-0.5 mb-4">
+              <Quote size={32} className="text-border mb-6" />
+              <div className="flex gap-1 mb-5">
                 {Array.from({ length: t.stars }).map((_, si) => (
-                  <Star key={si} size={16} className="fill-accent text-accent" />
+                  <Star key={si} size={14} className="fill-foreground text-foreground" />
                 ))}
               </div>
-              <p className="text-sm text-foreground leading-relaxed mb-6 italic">"{t.text}"</p>
-              <div>
+              <p className="text-foreground leading-relaxed mb-8 font-light">"{t.text}"</p>
+              <div className="border-t border-border pt-5">
                 <p className="font-semibold text-sm text-foreground">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
+                <p className="text-xs text-muted-foreground mt-1">{t.role}</p>
               </div>
             </motion.div>
           ))}
