@@ -32,11 +32,11 @@ const HeroSection = () => (
           </p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-[1.05] text-primary-foreground mb-6">
-            Transformez vos photos immobilières en visuels qui donnent envie
+            Augmentez vos réservations et attirez plus de visiteurs grâce à des visuels qui donnent envie
           </h1>
 
           <p className="text-lg md:text-xl text-primary-foreground/70 max-w-lg mb-10 font-light leading-relaxed">
-            Home staging virtuel haut de gamme. Résultat en 24h, sans engagement.
+            Les visiteurs décident en quelques secondes. Donnez-leur envie de réserver ou d'acheter immédiatement.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
