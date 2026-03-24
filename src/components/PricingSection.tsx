@@ -38,7 +38,7 @@ const PricingSection = () => {
             className="p-10 rounded-2xl border border-border bg-card shadow-card hover:shadow-elevated transition-all duration-500"
           >
             <h3 className="text-2xl font-display font-bold text-foreground mb-2">Pack Découverte</h3>
-            <p className="text-sm text-muted-foreground mb-4 font-light">Idéal pour tester le service</p>
+            <p className="text-sm text-muted-foreground mb-4 font-light">Idéal pour booster votre annonce rapidement</p>
             <div className="text-4xl font-display font-bold text-foreground mb-8">25€</div>
             <div className="space-y-4 mb-10">
               {[
