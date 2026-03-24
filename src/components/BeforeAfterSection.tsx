@@ -84,13 +84,12 @@ const ComparisonSlider = ({ before, after, label, index }: { before: string; aft
         {/* Before image (clipped) */}
         <div
           className="absolute inset-0 overflow-hidden"
-          style={{ width: `${position}%` }}
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
         >
           <img
             src={before}
             alt={`${label} avant`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "100vw", maxWidth: "none" }}
             draggable={false}
           />
         </div>
