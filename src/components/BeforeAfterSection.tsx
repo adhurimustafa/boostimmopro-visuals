@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useCallback } from "react";
 import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
 import before2 from "@/assets/before-2.jpg";
@@ -10,9 +10,49 @@ const comparisons = [
   { before: before2, after: after2, label: "Chambre — Ambiance haut de gamme" },
 ];
 
-const ComparisonCard = ({ before, after, label, index }: { before: string; after: string; label: string; index: number }) => {
+const ComparisonSlider = ({ before, after, label, index }: { before: string; after: string; label: string; index: number }) => {
   const ref = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+
+  const updatePosition = useCallback((clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const pct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setPosition(pct);
+  }, []);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging) return;
+    updatePosition(e.clientX);
+  }, [isDragging, updatePosition]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    setIsDragging(true);
+    updatePosition(e.touches[0].clientX);
+  }, [updatePosition]);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!isDragging) return;
+    updatePosition(e.touches[0].clientX);
+  }, [isDragging, updatePosition]);
+
+  const handleTouchEnd = useCallback(() => {
+    setIsDragging(false);
+  }, []);
 
   return (
     <motion.div
@@ -21,18 +61,61 @@ const ComparisonCard = ({ before, after, label, index }: { before: string; after
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
     >
-      <div className="grid grid-cols-2 gap-4 md:gap-6">
-        <div className="relative overflow-hidden rounded-2xl shadow-elevated group">
-          <div className="absolute top-4 left-4 z-10 bg-foreground/80 text-primary-foreground text-xs font-medium tracking-wide-premium uppercase px-4 py-2 rounded-full">
-            Avant
-          </div>
-          <img src={before} alt={`${label} avant`} loading="lazy" width={800} height={600} className="w-full h-56 md:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-700" />
+      <div
+        ref={containerRef}
+        className="relative overflow-hidden rounded-2xl shadow-elevated cursor-col-resize select-none"
+        style={{ aspectRatio: "16 / 10" }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* After image (full background) */}
+        <img
+          src={after}
+          alt={`${label} après`}
+          className="absolute inset-0 w-full h-full object-cover"
+          draggable={false}
+        />
+
+        {/* Before image (clipped) */}
+        <div
+          className="absolute inset-0 overflow-hidden"
+          style={{ width: `${position}%` }}
+        >
+          <img
+            src={before}
+            alt={`${label} avant`}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "100vw", maxWidth: "none" }}
+            draggable={false}
+          />
         </div>
-        <div className="relative overflow-hidden rounded-2xl shadow-elevated group">
-          <div className="absolute top-4 left-4 z-10 gradient-primary text-primary-foreground text-xs font-medium tracking-wide-premium uppercase px-4 py-2 rounded-full">
-            Après
+
+        {/* Slider line */}
+        <div
+          className="absolute top-0 bottom-0 z-20"
+          style={{ left: `${position}%`, transform: "translateX(-50%)" }}
+        >
+          <div className="w-0.5 h-full bg-primary-foreground/90" />
+          {/* Handle */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary-foreground shadow-elevated flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-foreground">
+              <path d="M5 3L2 8L5 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M11 3L14 8L11 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
-          <img src={after} alt={`${label} après`} loading="lazy" width={800} height={600} className="w-full h-56 md:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-700" />
+        </div>
+
+        {/* Labels */}
+        <div className="absolute top-4 left-4 z-10 bg-foreground/80 text-primary-foreground text-xs font-medium tracking-wide-premium uppercase px-4 py-2 rounded-full pointer-events-none">
+          Avant
+        </div>
+        <div className="absolute top-4 right-4 z-10 gradient-primary text-primary-foreground text-xs font-medium tracking-wide-premium uppercase px-4 py-2 rounded-full pointer-events-none">
+          Après
         </div>
       </div>
       <p className="text-center text-sm text-muted-foreground font-medium mt-5 tracking-premium">{label}</p>
@@ -67,7 +150,7 @@ const BeforeAfterSection = () => {
 
         <div className="space-y-14 max-w-5xl mx-auto">
           {comparisons.map((c, i) => (
-            <ComparisonCard key={c.label} {...c} index={i} />
+            <ComparisonSlider key={c.label} {...c} index={i} />
           ))}
         </div>
       </div>
